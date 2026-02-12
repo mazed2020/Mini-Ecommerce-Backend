@@ -51,6 +51,7 @@ built using **Node.js**, **Express.js**, and **MongoDB**.
    │
 ├── node_modules/
 ├── public/dummydataset
+├── public/temp/ER-Diagram
 ├── src/
 │ ├── controllers/
 │ ├── db/
@@ -82,17 +83,15 @@ npm install
 ### 3️⃣ Create `.env` File
 
 ``` env
+MONGODB_URI=mongodb://127.0.0.1:27017
 PORT=5000
-MONGODB_URI=mongodb://127.0.0.1:27017/mini-ecommerce
-
-CORS_ORIGIN=http://localhost:3000
-
-ACCESS_TOKEN_SECRET=your_access_token_secret
-ACCESS_TOKEN_EXPIRE=10d
-
-REFRESH_TOKEN_SECRET=your_refresh_token_secret
-REFRESH_TOKEN_EXPIRE=1d
- 
+CORS_ORIGIN=*
+EXPIERY_KEY=10d
+REFRESH_TOKEN_SECRE=dfbdjbfajbsid
+REFRESH_EXPIERE=1d
+CLOUD_NAME=dr3lsbx2k
+API_KEY=185859713928424
+SECRETE_kEY=jKPCFPlJN9IVW9uA7KVcLIedkmM
 ```
 
  
@@ -160,6 +159,11 @@ The complete API documentation is available via Postman:
 
 🔗 **Live API Docs:**  
 👉 https://documenter.getpostman.com/view/34409474/2sBXcBm26C
+
+### ER-Diagram
+ER-Diagram image and mermaid code provide there
+- public/temp/
+
 
 You can:
 - Explore all endpoints

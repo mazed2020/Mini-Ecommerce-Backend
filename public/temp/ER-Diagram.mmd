@@ -1,0 +1,67 @@
+erDiagram
+
+    USERS {
+        string _id PK
+        string name
+        string email
+        string password
+        string role
+        datetime blockedUntil
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    PRODUCTS {
+        string _id PK
+        string name
+        string description
+        float price
+        int stock
+        boolean isActive
+        string imageUrls
+        string createdBy FK
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    CARTS {
+        string _id PK
+        string userId FK
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    CART_ITEMS {
+        string _id PK
+        string cartId FK
+        string productId FK
+        int quantity
+        float unitPrice
+    }
+
+    ORDERS {
+        string _id PK
+        string userId FK
+        float totalAmount
+        string status
+        datetime createdAt
+        datetime updatedAt
+    }
+
+    ORDER_ITEMS {
+        string _id PK
+        string orderId FK
+        string productId FK
+        int quantity
+        float unitPrice
+    }
+
+    USERS ||--o{ PRODUCTS : creates
+    USERS ||--|| CARTS : has
+    USERS ||--o{ ORDERS : places
+
+    CARTS ||--o{ CART_ITEMS : contains
+    PRODUCTS ||--o{ CART_ITEMS : added_to
+
+    ORDERS ||--o{ ORDER_ITEMS : contains
+    PRODUCTS ||--o{ ORDER_ITEMS : included_in
